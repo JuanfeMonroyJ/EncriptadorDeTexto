@@ -20,19 +20,16 @@
 
         <section>
 
-            <label for="textoAEncriptar">
-                Texto a encriptar:
-            </label>
-            <textarea placeholder="Ingrese el texto aquí" id="textoAEncriptar"></textarea>
-
-            <button id="botonEncriptar" type="button">
+            <textarea placeholder="Ingrese el texto aquí" id="textoAModificar"></textarea>
+        <div class="container-botones">
+            <button id="botonEncriptar" type="button" onclick="verificarEncriptar();">
                 Encriptar
             </button>
 
-            <button id="botonDesencriptar" type="button">
+            <button id="botonDesencriptar" type="button" onclick="verificarDesencriptar();">
                 Desencriptar
             </button>
-
+        </div>
             <p>Solo letras minúsculas y sin acentos</p>
 
         </section>
@@ -43,8 +40,8 @@
                 alt="Hombre arrodillado con lupa y mensaje de 'Ningún mensaje fue encontrado'">
             
                 <label for="textoEncriptado">texto encriptado</label>
-            <textarea id="textoEncriptado">git</textarea>
-            <button id="botonCopiar" type="button">
+            <textarea id="textoEncriptado"></textarea>
+            <button id="botonCopiar" type="button" onclick="copiarTexto();">
                 Copiar
             </button>
 
@@ -58,7 +55,7 @@
         <p>Desarrollado por Juan Felipe Monroy Jimenez</p>
 
     </footer>
-
+<script src="script.js"></script>
 </body>
 
 </html>
