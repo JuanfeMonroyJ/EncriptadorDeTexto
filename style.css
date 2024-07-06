@@ -1,0 +1,42 @@
+:root {
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 120px;
+    height: 48px;
+    margin: 40px 40px;
+}
+
+body {
+    
+}
+
+.seccion1{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin: 168px 0 0 240px;
+}
+.seccion1 textarea{
+    width: 680px;
+    height: 288px;
+}
+
+.seccion2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    margin: 40px 0 0 1000px;
+    width: 400px;
+    height: 944px;
+    border: 1px solid #000000;
+    border-radius: 32px;
+}
