@@ -17,10 +17,13 @@
 
 
     <main>
+        
+    <!-- Sección de Encriptar y Desencriptar -->
 
         <section>
 
             <textarea placeholder="Ingrese el texto aquí" id="textoAModificar"></textarea>
+
         <div class="container-botones">
             <button id="botonEncriptar" type="button" onclick="verificarEncriptar();">
                 Encriptar
@@ -30,17 +33,19 @@
                 Desencriptar
             </button>
         </div>
+
             <p>Solo letras minúsculas y sin acentos</p>
 
         </section>
+    
+    <!-- Sección de Texto Encriptado -->
 
         <section>
 
-            <img src="./assets/Group 8.png"
-                alt="Hombre arrodillado con lupa y mensaje de 'Ningún mensaje fue encontrado'">
+            <textarea placeholder="Texto Encriptado"></textarea>
+
+            <p id="textoEncriptado"></p>
             
-                <label for="textoEncriptado">texto encriptado</label>
-            <textarea id="textoEncriptado"></textarea>
             <button id="botonCopiar" type="button" onclick="copiarTexto();">
                 Copiar
             </button>

@@ -7,59 +7,85 @@ const letraU = "ufat";
 
 // Función para encriptar las palabras
 function verificarEncriptar() {
+    if (!validarCaracteres()) {
+        return;
+    }
+
     let palabra = document.getElementById("textoAModificar").value;
     let palabraEncriptada = "";
 
-    // Validación para solo aceptar letras minúsculas y sin caracteres especiales
-    if (!/^[a-z\s]+$/.test(palabra)) {
-        alert("Por favor, ingresa solo letras minúsculas y sin caracteres especiales.");
-    } else {
-
-        //Lógica para encriptar las palabras
-        for (let i = 0; i < palabra.length; i++) {
-            if (palabra[i] === "a") {
-                palabraEncriptada += letraA;
-            } else if (palabra[i] === "e") {
-                palabraEncriptada += letraE;
-            } else if (palabra[i] === "i") {
-                palabraEncriptada += letraI;
-            } else if (palabra[i] === "o") {
-                palabraEncriptada += letraO;
-            } else if (palabra[i] === "u") {
-                palabraEncriptada += letraU;
-            } else {
-                palabraEncriptada += palabra[i];
-            }
+    //Lógica para encriptar las palabras
+    for (let i = 0; i < palabra.length; i++) {
+        if (palabra[i] === "a") {
+            palabraEncriptada += letraA;
+        } else if (palabra[i] === "e") {
+            palabraEncriptada += letraE;
+        } else if (palabra[i] === "i") {
+            palabraEncriptada += letraI;
+        } else if (palabra[i] === "o") {
+            palabraEncriptada += letraO;
+        } else if (palabra[i] === "u") {
+            palabraEncriptada += letraU;
+        } else {
+            palabraEncriptada += palabra[i];
         }
-        limpiarCaja();
     }
+    //guardarInformacion();
+    limpiarCaja();
     return palabraEncriptada;
+    //console.log(palabraEncriptada);
 }
 
 
 
 // Función para desencriptar las palabras
 function verificarDesencriptar() {
-    let palabra = document.getElementById("textoAModificar").value;
-    let palabraDesencriptada = "";
-
-    if (!/^[a-z\s]+$/.test(palabra)) {
-        alert("Por favor, ingresa solo letras minúsculas y sin caracteres especiales.");
+    if (!validarCaracteres()) {
         return;
     }
 
+    let palabra = document.getElementById("textoAModificar").value;
+    let palabraDesencriptada = "";
+
     // Reemplazo de secuencias por letras correspondientes
     palabraDesencriptada = palabra.replace(/ai/g, 'a')
-        .replace(/enter/g, 'e')
-        .replace(/imes/g, 'i')
-        .replace(/ober/g, 'o')
-        .replace(/ufat/g, 'u');
-
+    .replace(/enter/g, 'e')
+    .replace(/imes/g, 'i')
+    .replace(/ober/g, 'o')
+    .replace(/ufat/g, 'u');
+    
     limpiarCaja();
     return palabraDesencriptada;
+    //console.log(palabraDesencriptada);
 }
 
 
+
+// Función para limpiar campo de texto
 function limpiarCaja() {
     document.getElementById('textoAModificar').value = '';
 }
+
+// Función para validación de caracteres y minúsculas
+function validarCaracteres() {
+    let palabra = document.getElementById("textoAModificar").value;
+    if (!/^[a-z\s]+$/.test(palabra)) {
+        alert("Por favor, ingresa solo letras minúsculas y sin caracteres especiales.");
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+
+// Función para guardar información Solo si pasa la validación (validarCaracteres)
+/*
+function guardarInformacion() {
+    if (validarCaracteres()) {
+        let palabra = document.getElementById("textoAModificar").value;
+        localStorage.setItem('palabra', palabra);
+        
+    }
+} 
+*/ 
