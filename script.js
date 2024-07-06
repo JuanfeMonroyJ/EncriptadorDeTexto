@@ -32,6 +32,7 @@ function verificarEncriptar() {
     }
     guardarInformacion();
     localStorage.setItem("palabraEncriptada", palabraEncriptada);
+    mostrarInformacionEncriptado();
     limpiarCaja();
     return palabraEncriptada;
     //console.log(palabraEncriptada);
@@ -43,7 +44,6 @@ function verificarDesencriptar() {
     if (!validarCaracteres()) {
         return;
     }
-
     let palabra = document.getElementById("textoAModificar").value;
     let palabraDesencriptada = "";
 
@@ -54,15 +54,32 @@ function verificarDesencriptar() {
         .replace(/ober/g, 'o')
         .replace(/ufat/g, 'u');
 
+    localStorage.setItem("palabraDesencriptada", palabraDesencriptada);
+
+    mostrarInformacionDesencriptar();
     limpiarCaja();
-    return palabraDesencriptada;
-    //console.log(palabraDesencriptada);
+    //return palabraDesencriptada;
+    console.log(palabraDesencriptada);
 }
 
+// Funciones para mostrar la información guardada (el texto encriptado)
+function mostrarInformacionEncriptado() {
+    let textoEncriptado = document.getElementById('textoEncriptado');
+    textoEncriptado.textContent = localStorage.getItem("palabraEncriptada");
+    return textoEncriptado;
+}
+function mostrarInformacionDesencriptar() {
+    let textoEncriptado = document.getElementById('textoEncriptado');
+    textoEncriptado.textContent = localStorage.getItem("palabraDesencriptada");
+    return textoEncriptado;
+}
 
-// Función para limpiar campo de texto
-function limpiarCaja() {
-    document.getElementById('textoAModificar').value = '';
+// Función para guardar información Solo si pasa la validación (validarCaracteres)
+function guardarInformacion() {
+    if (validarCaracteres()) {
+        let palabra = document.getElementById("textoAModificar").value;
+        localStorage.setItem('palabra', palabra);
+    }
 }
 
 // Función para validación de caracteres y minúsculas
@@ -76,21 +93,7 @@ function validarCaracteres() {
     }
 }
 
-
-// Función para guardar información Solo si pasa la validación (validarCaracteres)
-
-function guardarInformacion() {
-    if (validarCaracteres()) {
-        let palabra = document.getElementById("textoAModificar").value;
-        localStorage.setItem('palabra', palabra);
-
-    }
-}
-
-
-// Función para mostrar la información guardada (el texto encriptado)
-
-function mostrarInformacion() {
-    let textoEncriptado = document.getElementById('textoEncriptado');
-    textoEncriptado.textContent = localStorage.getItem('palabraEncriptada');
+// Función para limpiar campo de texto
+function limpiarCaja() {
+    document.getElementById('textoAModificar').value = '';
 }
