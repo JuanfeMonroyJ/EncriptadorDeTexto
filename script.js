@@ -30,12 +30,12 @@ function verificarEncriptar() {
             palabraEncriptada += palabra[i];
         }
     }
-    //guardarInformacion();
+    guardarInformacion();
+    localStorage.setItem("palabraEncriptada", palabraEncriptada);
     limpiarCaja();
     return palabraEncriptada;
     //console.log(palabraEncriptada);
 }
-
 
 
 // Función para desencriptar las palabras
@@ -49,16 +49,15 @@ function verificarDesencriptar() {
 
     // Reemplazo de secuencias por letras correspondientes
     palabraDesencriptada = palabra.replace(/ai/g, 'a')
-    .replace(/enter/g, 'e')
-    .replace(/imes/g, 'i')
-    .replace(/ober/g, 'o')
-    .replace(/ufat/g, 'u');
-    
+        .replace(/enter/g, 'e')
+        .replace(/imes/g, 'i')
+        .replace(/ober/g, 'o')
+        .replace(/ufat/g, 'u');
+
     limpiarCaja();
     return palabraDesencriptada;
     //console.log(palabraDesencriptada);
 }
-
 
 
 // Función para limpiar campo de texto
@@ -78,14 +77,20 @@ function validarCaracteres() {
 }
 
 
-
 // Función para guardar información Solo si pasa la validación (validarCaracteres)
-/*
+
 function guardarInformacion() {
     if (validarCaracteres()) {
         let palabra = document.getElementById("textoAModificar").value;
         localStorage.setItem('palabra', palabra);
-        
+
     }
-} 
-*/ 
+}
+
+
+// Función para mostrar la información guardada (el texto encriptado)
+
+function mostrarInformacion() {
+    let textoEncriptado = document.getElementById('textoEncriptado');
+    textoEncriptado.textContent = localStorage.getItem('palabraEncriptada');
+}
