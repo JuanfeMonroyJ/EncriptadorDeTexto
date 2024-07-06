@@ -97,3 +97,11 @@ function validarCaracteres() {
 function limpiarCaja() {
     document.getElementById('textoAModificar').value = '';
 }
+
+// Función copiar en portapapeles
+function copiarTexto() {
+    let textoEncriptado = document.getElementById('textoEncriptado');
+    navigator.clipboard.writeText(textoEncriptado.textContent);
+    alert("Texto copiado al portapapeles");
+
+}
