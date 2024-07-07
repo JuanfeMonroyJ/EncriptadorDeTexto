@@ -28,7 +28,7 @@
 
     <header class="container-fluid navbar bg-dark">
         <img class="logo" src="./assets/favicon.png" alt="Logo de la empresa">
-        <h1>Encriptador de Texto</h1>
+        <h1>Encriptador de Mensajes</h1>
     </header>
 
 
@@ -42,7 +42,7 @@
 
                 <div class="button-container">
 
-                    <p>Ingresa solo letras minúsculas y sin acentos</p>
+                    <p id="alert"><i class="bi bi-info-circle"></i> Ingresa solo letras en minúsculas y sin acentos</p>
 
                     <button class="btn btn-dark" id="botonEncriptar" type="button" onclick="verificarEncriptar();">
                         Encriptar
@@ -70,13 +70,21 @@
                 </div>
             </section>
         </div>
-        <p class="invitation-message">¡Usa esta app para compartir mensajes secretos con tus amigos! Encripta tu mensaje y compártelo para que descubran el código.</p>
+        <p class="invitation-message">¡Usa esta app para compartir mensajes secretos con tus amigos! Encripta tu mensaje
+            y compártelo para que descubran el código.</p>
+
+        <div class="social-media">
+            <p>Te invito a seguirme en mis redes sociales:</p>
+            <a id="github" href="https://github.com/JuanfeMonroyJ" target="_blank"><i class="bi bi-github"></i>GitHub</a>
+            <a id="linkedin" href="https://www.linkedin.com/in/juanfelipemonroy/" target="_blank"><i class="bi bi-linkedin">LinkedIn</i></a>
+        </div>
+
     </main>
 
 
     <footer class="container-fluid bg-dark">
 
-        <p><p>&copy; 2024 Encriptador de Mensajes. Todos los derechos reservados.</p></p>
+        <p>&copy; 2024 Juan Felipe Monroy Jimenez | Encriptador de Mensajes.</p>
 
     </footer>
 

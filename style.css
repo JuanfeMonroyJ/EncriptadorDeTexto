@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --fuente-titulo: 'Krona One', sans-serif;
+    --fuente-texto: 'Montserrat', sans-serif;
+
+    --color-letras: #000000;
+    --color-titulo: #ffffff;
+    --color-fondos: #000000;
+    --color-body: #f2f2f2;
+}
 
 
 * {
@@ -6,35 +17,37 @@
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-
 /* Contenedor principal */
 body {
-    background-color: #F2F2F2;
+    background-color: var(--color-body);
     font-family: Arial, sans-serif;
     overflow-x: hidden;
 }
+
 header {
-    width: 100%; 
+    width: 100%;
     position: relative;
-    height: auto; 
+    height: auto;
 }
 
 /* Estilo para la imagen del logo */
 header img {
     height: 75px;
     margin: 0 0px 0 20px;
-    
+
 }
+
 h1 {
     position: absolute;
     width: 100%;
-    text-align: center; 
-    color: white;
-    padding: 20px 0; 
+    text-align: center;
+    color: var(--color-titulo);
+    padding: 20px 0;
+    font-family: var(--fuente-titulo);
+}
+
+main {
+    font-family: var(--fuente-texto);
 }
 
 /* Estilo para el input de texto */
@@ -49,14 +62,16 @@ h1 {
 }
 
 /* Sección de contenedores */
-#container1, #container2 {
+#container1,
+#container2 {
     margin: 20px;
     border: 2px solid #ccc;
+    font-family: var(--fuente-texto);
 }
 
 /* Estilo para la caja de texto encriptado */
 #textoEncriptado {
-    background-color: #fff;
+    background-color: var(--color-titulo);
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
@@ -67,7 +82,7 @@ h1 {
 
 /* Estilo para los botones */
 button {
-    color: white;
+    color: var(--color-titulo);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -87,7 +102,7 @@ button-containner {
 
 /* Estilo para la caja de texto desencriptado */
 #textoDesencriptado {
-    background-color: #fff;
+    background-color: var(--color-body);
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
@@ -95,31 +110,60 @@ button-containner {
     margin-top: 20px;
 }
 
-/* Estilo para el mensaje de advertencia */
-.warning-message {
-    font-size: 12px;
-    color: #999;
-    margin-top: 10px;
-}
+
+
 
 footer {
     text-align: center;
     padding: 20px 0;
-    color: white;
+    color: var(--color-titulo);
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-family: var(--fuente-titulo);
 }
-header, footer {
-    width: 100%; 
+
+header,
+footer {
+    width: 100%;
     height: 100px;
 }
+
+/* Social Media */
+.social-media {
+    color: var(--color-letras);
+    margin: 40px;
+    text-align: center;
+    color: var(--color-letras);
+    font-size: 1.5rem;
+}
+
+/* Logos redes */
+#linkedin, #github {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    text-decoration: none;
+}
+#linkedin {
+    color: #0077b5
+}
+#github {
+    color: var(--color-fondos)
+}
+
 /* Estilo para el mensaje de invitación */
 .invitation-message {
     text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
-    color: #333;
+    font-size: 20px;
+}
+
+/* Estilo Aviso de advertencia */
+#alert {
+    color: #000000;
+    border: 1px solid #f70000;
+    width: 45%;
+    padding: 5px;
 }
 
 /* Adaptable (Responsivo) */
@@ -127,7 +171,24 @@ header, footer {
     .logo {
         display: none;
     }
+
     .navbar {
         padding: 50px 0;
     }
+}
+
+@media screen and (max-width: 400px) {
+    .invitation-message {
+        display: none;
     }
+    .social-media {
+        margin: 1px;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 560px){
+    #alert{
+    width: 75%;
+    padding: 5px;
+    }
+}
